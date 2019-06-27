@@ -1,0 +1,22 @@
+#death-wrapper {
+  display: flex;
+}
+
+
+#death-pic {
+  max-height: 100%;
+  margin: auto;
+  -webkit-animation: fade 11s linear forwards; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fade 11s linear forwards; /* Firefox < 16 */
+  -ms-animation: fade 11s linear forwards; /* Internet Explorer */
+  -o-animation: fade 11s linear forwards; /* Opera < 12.1 */
+  animation: fade 11s linear forwards;
+}
+
+@keyframes fade {
+  0%,100% { opacity: 0 }
+  50% { opacity: 1 }
+}
+
+
+
