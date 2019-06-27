@@ -1,16 +1,42 @@
-#death-wrapper {
+#fade-wrapper {
   display: flex;
+  width: 100%;
+  opacity: 0;
+  /* I'll want to support browsers (not sure why?) but not right now; */
+  /* -webkit-animation: fade 11s infinite linear forwards; */
+  /* Safari, Chrome and Opera > 12.1 */
+  /*
+  -moz-animation: fade 11s infinite linear forwards; Firefox < 16
+  -ms-animation: fade 11s infinite linear forwards; Internet Explorer
+  -o-animation: fade 11s infinite linear forwards; Opera < 12.1
+  */
+  animation: fade 11s infinite ease-in-out forwards;
+  animation-delay: 4s;
+  margin: auto;
 }
 
+#jump-wrapper {
+  animation: createBox 8s infinite linear forwards;
+  margin: auto;
+}
+
+#wiggle-wrapper {
+  animation: wiggle 11s infinite;
+  margin: auto;
+}
 
 #death-pic {
   max-height: 100%;
   margin: auto;
-  -webkit-animation: fade 11s linear forwards; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fade 11s linear forwards; /* Firefox < 16 */
-  -ms-animation: fade 11s linear forwards; /* Internet Explorer */
-  -o-animation: fade 11s linear forwards; /* Opera < 12.1 */
-  animation: fade 11s linear forwards;
+}
+
+@keyframes createBox {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 @keyframes fade {
@@ -18,5 +44,11 @@
   50% { opacity: 1 }
 }
 
+@keyframes wiggle {
+    0%, 22% { transform: rotate(6deg); }
+   11%, 33% { transform: rotate(-8deg); }
+   55%, 79%, 88% { transform: rotate(12deg); }
+  65%, 84%, 99% { transform: rotate(-14deg); }
+}
 
 
