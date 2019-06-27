@@ -1,4 +1,4 @@
-Module.register("hauntedmirror", {
+Module.register("haunted-mirror", {
   // Default module config.
   defaults: {
     text: "HAUNTED MEEERRRORRRR!"
