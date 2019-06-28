@@ -1,54 +1,45 @@
-#fade-wrapper {
+#death-wrapper {
   display: flex;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   opacity: 0;
-  /* I'll want to support browsers (not sure why?) but not right now; */
-  /* -webkit-animation: fade 11s infinite linear forwards; */
-  /* Safari, Chrome and Opera > 12.1 */
-  /*
-  -moz-animation: fade 11s infinite linear forwards; Firefox < 16
-  -ms-animation: fade 11s infinite linear forwards; Internet Explorer
-  -o-animation: fade 11s infinite linear forwards; Opera < 12.1
-  */
-  animation: fade 7s infinite ease-in-out forwards;
-  /* animation-delay: 4s; */
+  animation: fade 7s infinite ease-in-out forwards 7s;
   margin: auto;
 }
 
 #jump-wrapper {
-  animation: createBox 8s infinite linear forwards;
+  animation: jumpAtMeBro 3s infinite cubic-bezier(0.77, 0.26, 0.2, 1) forwards;
   margin: auto;
 }
 
 #wiggle-wrapper {
-  animation: wiggle 11s infinite;
+  animation: wiggle 3s infinite linear;
   margin: auto;
 }
 
 #death-pic {
-  max-height: 100%;
-  margin: auto;
+  margin: auto -50px auto auto;
 }
 
-@keyframes createBox {
+@keyframes jumpAtMeBro {
   from {
     transform: scale(0);
   }
   to {
-    transform: scale(1);
+    transform: scale(2.3);
   }
 }
 
 @keyframes fade {
-  0%,100% { opacity: 0 }
-  50% { opacity: 1 }
+  0%, 23%, 30%, 50%, 100% { opacity: 0 }
+  3%, 26%, 44%, 75% { opacity: 1 }
 }
 
 @keyframes wiggle {
-    0%, 22% { transform: rotate(6deg); }
-   11%, 33% { transform: rotate(-8deg); }
-   55%, 79%, 88% { transform: rotate(12deg); }
-  65%, 84%, 99% { transform: rotate(-14deg); }
+    0%, 10%, 22% { transform: rotate(11deg); }
+   5%, 15%, 33% { transform: rotate(-14deg); }
+   55%, 79%, 90%, 100% { transform: rotate(22deg); }
+  65%, 85%, 95% { transform: rotate(-30deg); }
 }
 
 

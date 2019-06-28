@@ -1,37 +1,43 @@
+:root {
+  --bloodHeight: 2000px;
+  --negBloodHeight: -3900px;
+  --bloodPicIntrinsicHeight: 1500px;
+  --redBlockIntrinsicHeight: 500px;
+
+  --dropTime: 40s;
+}
+
 #blood-wrapper {
-  display: flex;
   width: 100vw;
   height: 100vh;
-  /* top: -100%; */
   position: absolute;
-  right: 0;
-  opacity: 1;
-  margin: auto;
-  animation: drop 4s linear forwards ;
+
+  /* animation-name: drop;
+  animation-duration: var(--dropTime);
+  animation-fill-mode: forwards;
+  animation-timing-function: ;
+  animation-iteration-count: infinite;
+  animation-delay: var(--dropDelay); */
 }
 
-#stretch-wrapper {
-  animation: stretcher 20s forwards ;
- width: 100vw;
-  margin: auto;
+.animate {
+  animation:
+  drop var(--dropTime) cubic-bezier(0.66, 0.01, 1, 1) forwards,
+  fadeToBlack 55s ease-in forwards;
 }
 
-/* #blood-pic {
-  width: 100%;
-  margin: auto;
-} */
+
 
 #red-block {
   top: 0vh;
   height: 100vh;
   width: 100%;
-  border: none;
 }
 
 #blood-pic {
   border: none;
   width: 120vw;
-  height: 100vh;
+  height: var(--bloodHeight);
   margin-left: -5%;
   margin-top: -20px;
 }
@@ -45,15 +51,13 @@
 }
 
 @keyframes drop {
-  0% { top: -200vh }
+  0% { top: var(--negBloodHeight) }
   100% { top: 0% }
 }
 
-@keyframes stretcher {
-  0% { height: 100% }
-  90% { height: 250% }
-  100% { height: 300% }
+@keyframes fadeToBlack {
+  0%, 80% { opacity: 1 }
+  100% { opacity: 0 }
 }
-/
 
 
