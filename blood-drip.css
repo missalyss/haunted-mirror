@@ -1,0 +1,59 @@
+#blood-wrapper {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  /* top: -100%; */
+  position: absolute;
+  right: 0;
+  opacity: 1;
+  margin: auto;
+  animation: drop 4s linear forwards ;
+}
+
+#stretch-wrapper {
+  animation: stretcher 20s forwards ;
+ width: 100vw;
+  margin: auto;
+}
+
+/* #blood-pic {
+  width: 100%;
+  margin: auto;
+} */
+
+#red-block {
+  top: 0vh;
+  height: 100vh;
+  width: 100%;
+  border: none;
+}
+
+#blood-pic {
+  border: none;
+  width: 120vw;
+  height: 100vh;
+  margin-left: -5%;
+  margin-top: -20px;
+}
+
+#help-me {
+  background-color: #850B22;
+  color: black;
+  font-size: 50px;
+  margin: 0;
+  text-align: center;
+}
+
+@keyframes drop {
+  0% { top: -200vh }
+  100% { top: 0% }
+}
+
+@keyframes stretcher {
+  0% { height: 100% }
+  90% { height: 250% }
+  100% { height: 300% }
+}
+/
+
+

@@ -4,7 +4,8 @@ Module.register("haunted-mirror", {
 
   defaults: {
     // other default values go here and are accessible by this.config
-    text: "Haunted Mirror"
+    text: "Haunted Mirror",
+    view: 'blood-drip'
   },
 
   start: function () { //Setting up interval for refresh
@@ -20,13 +21,47 @@ Module.register("haunted-mirror", {
     var self = this;
     var wrapper = document.createElement("div");
     wrapper.id = 'wrapper';
-    wrapper.style.display = "flex"
+    wrapper.style.display = "flex";
+    wrapper.style.width = '100vw';
+    wrapper.style.height = '100vh';
+    console.log(this.config);
 
-    self.renderContent(wrapper)
+    if (this.config.view === 'red-death') {
+      self.renderRedDeath(wrapper)
+    } else if (this.config.view === 'blood-drip') {
+      self.renderBlood(wrapper)
+    }
+
     return wrapper;
   },
 
-  renderContent: function (wrapper) {
+  renderBlood: function (wrapper) {
+    var bloodWrapper = document.createElement("div");
+    bloodWrapper.id = 'blood-wrapper';
+
+
+    var stretchWrapper = document.createElement("div");
+    stretchWrapper.id = 'stretch-wrapper';
+    bloodWrapper.appendChild(stretchWrapper);
+    var bloodPic = document.createElement("img");
+    bloodPic.src = "/haunted-mirror/blood-drip.png";
+    bloodPic.id = 'blood-pic';
+    var redBlock = document.createElement("img");
+    redBlock.src = "/haunted-mirror/red-block.png";
+    redBlock.id = 'red-block';
+
+    // var helpMe = document.createElement('p')
+    // helpMe.id = 'help-me';
+    // helpMe.innerHTML = 'help me...';
+    // stretchWrapper.appendChild(helpMe)
+    stretchWrapper.appendChild(redBlock)
+    stretchWrapper.appendChild(bloodPic);
+    console.log('WRAPPER: ', stretchWrapper);
+
+    return wrapper.appendChild(bloodWrapper)
+  },
+
+  renderRedDeath: function (wrapper) {
     var fadeWrapper = document.createElement("div");
     fadeWrapper.id = 'fade-wrapper';
 
@@ -47,6 +82,9 @@ Module.register("haunted-mirror", {
   },
 
   getStyles: function () {
-    return [this.file("haunted-mirror.css")]
+    return [
+      this.file('red-death.css'),
+      this.file('blood-drip.css')
+    ]
   },
 });

@@ -10,8 +10,8 @@
   -ms-animation: fade 11s infinite linear forwards; Internet Explorer
   -o-animation: fade 11s infinite linear forwards; Opera < 12.1
   */
-  animation: fade 11s infinite ease-in-out forwards;
-  animation-delay: 4s;
+  animation: fade 7s infinite ease-in-out forwards;
+  /* animation-delay: 4s; */
   margin: auto;
 }
 
